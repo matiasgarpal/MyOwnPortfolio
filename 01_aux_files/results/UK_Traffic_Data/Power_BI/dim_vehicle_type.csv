@@ -1,0 +1,12 @@
+﻿vehicle_id;vehicle_source_name;vehicle_type;avg_weight_kg
+1;pedal_cycles;PEDAL CYCLES;11
+2;two_wheeled_motor_vehicles;TWO WHEELED MOTOR VEHICLES;200
+3;cars_and_taxis;CARS AND TAXIS;1750
+4;buses_and_coaches;BUSES AND COACHES;15000
+5;lgvs;LGVS;2500
+6;hgvs_2_rigid_axle;HGVS 2 RIGID AXLE;14000
+7;hgvs_3_rigid_axle;HGVS 3 RIGID AXLE;22000
+8;hgvs_4_or_more_rigid_axle;HGVS 4 OR MORE RIGID AXLE;30000
+9;hgvs_3_or_4_articulated_axle;HGVS 3 OR 4 ARTICULATED AXLE;24000
+10;hgvs_5_articulated_axle;HGVS 5 ARTICULATED AXLE;35000
+11;hgvs_6_articulated_axle;HGVS 6 ARTICULATED AXLE;45000
