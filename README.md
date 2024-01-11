@@ -33,7 +33,7 @@ This portfolio is a collection of projects that I have worked on to enhance my s
 
 Throughout this portfolio, I have utilized a range of technologies, frameworks, and libraries. Some of the key technologies used include:
 
-- Python: For data analysis, scripting, and backend development.
+- Python: For data analysis, scripting, web scrapping and backend development.
 - Pandas: A powerful library for data manipulation and analysis in Python.
 - Power BI: A suite of business analytics tools for data visualization and reporting. Each report generated will be published on [my personal blog](https://mgpportfolio.blogspot.com/).
 - PySpark: The Python API for Apache Spark, enabling big data processing and analysis.
