@@ -14,7 +14,7 @@ P#B#?            :B##G: :G##GGBB######BBG5J~ Y#B#Y
 
 ## Folder Structure
 
-- `Main Folder`: Contains Project_Presentation.pdf file, from where I was inspired to develop this project, as well as our main ETL notebook "Data_Engineering_FULL_ETL.ipynb" that shows actual execution results
-    - `Data Engineering`:
+- `Main Folder`: Contains Project_Presentation.pdf file, from where I was inspired to develop this project, and README.md file as well.
+    - `Data Engineering`: It contains our main ETL notebook "Data_Engineering_FULL_ETL.ipynb" which calls another two notebooks from Web_Scrapping_And_Pandas and shows actual execution results.
         - `SQL Needed Scripts/`: Contains Every Scripts used to create the DW, including DB creation, SPS, views, etc.
         - `Web_Scrapping_And_Pandas/`: It has both of the parts of our main ETL, showing actual execution results.
