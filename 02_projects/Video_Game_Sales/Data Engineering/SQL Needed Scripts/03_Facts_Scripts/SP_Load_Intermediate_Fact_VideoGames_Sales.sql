@@ -75,20 +75,22 @@ BEGIN
 		,COALESCE(PUBLISHER.ID_Publisher,0) 
 		,COALESCE(DEVELOPER.ID_Developer,0) 
 		,VGChartz_Score
-		,Critic_Score
-		,User_Score
-		,Total_Shipped
-		,Total_Sales
-		,NA_Sales
-		,PAL_Sales
-		,Japan_Sales
-		,Other_Sales)) HASH_VALUE, --To identify data with changing values
+        ,Critic_Score
+        ,User_Score
+        ,Total_Shipped
+        ,Total_Sales
+        ,NA_Sales
+        ,PAL_Sales
+        ,Japan_Sales
+        ,Other_Sales
+        ,COALESCE(DDATE.DateKey,0)
+        ,Last_Update)) HASH_VALUE, --To identify data with changing values
 		ROW_NUMBER() OVER (PARTITION BY 
 		 COALESCE(VIDEOGAMES.ID_VideoGame,0)
 		,COALESCE(CONSOLES.ID_Console,0)    
 		,COALESCE(PUBLISHER.ID_Publisher,0) 
 		,COALESCE(DEVELOPER.ID_Developer,0) 
-		ORDER BY Last_Update DESC) RN --We detected some duplicates on the source data. FOR EXAMPLE: NIGHTS OF AZURE for PSV
+		ORDER BY Last_Update DESC, COALESCE(DDATE.DateKey,0) DESC) RN --We detected some duplicates on the source data. FOR EXAMPLE: NIGHTS OF AZURE for PSV
 	from 
 		SRC.Fact_VideoGames_Sales FACT
 		left join DW.Dim_VideoGames VIDEOGAMES ON VIDEOGAMES.Game_Name = FACT.GameName
