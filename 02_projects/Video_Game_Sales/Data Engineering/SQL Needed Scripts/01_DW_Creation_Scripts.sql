@@ -96,7 +96,7 @@ CREATE TABLE INTERMEDIATE.Fact_VideoGames_Sales(
 	Other_Sales int NULL,
 	ID_Release_Date bigint NOT NULL,
 	Last_Update date NULL,
-	HASH_VALUE VARBINARY (8000)
+	HASH_VALUE VARBINARY (8000) NOT NULL
 )
 GO
 
@@ -212,7 +212,7 @@ CREATE TABLE DW.Fact_VideoGames_Sales(
 	Other_Sales int NULL,
 	ID_Release_Date INT NOT NULL,
 	Last_Update date NULL,
-	HASH_VALUE varbinary (8000), --## To detect any changes on data
+	HASH_VALUE varbinary (8000) NOT NULL, --## To detect any changes on data
 	Audit_Insert_TS DATETIME2(7) NOT NULL DEFAULT (GETDATE()),	-- To identify whenever a row was updated/inserted	
 	Audit_Insert_Username nvarchar(20) not null DEFAULT ('ETL System'), -- To identify who inserted the row
 	Audit_Update_TS DATETIME2(7) NULL,	-- To identify whenever a row was updated/inserted
@@ -437,7 +437,7 @@ ADD FOREIGN KEY (ID_Release_Date) REFERENCES DW.Dim_Date(DateKey);
 ---------------------------------------
 
 ALTER TABLE DW.Fact_VideoGames_Sales
-ADD CONSTRAINT PK_Fact_VideoGames_Sales PRIMARY KEY (ID_VideoGame, ID_Console, ID_Publisher, ID_Developer, Audit_Insert_TS);
+ADD CONSTRAINT PK_Fact_VideoGames_Sales PRIMARY KEY (ID_VideoGame, ID_Console, ID_Publisher, ID_Developer, HASH_VALUE);
 GO
 
 ---------------------------------------
